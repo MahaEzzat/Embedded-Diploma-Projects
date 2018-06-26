@@ -150,7 +150,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x3058
+.text           0x00000000     0x30d6
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm16.o
                 0x00000000                __vectors
@@ -266,86 +266,86 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .text.ADC_voidInit
                 0x00000b46       0x70 ./src/ADC.o
                 0x00000b46                ADC_voidInit
- .text.ADC_u16GetVal
-                0x00000bb6      0x1ce ./src/ADC.o
-                0x00000bb6                ADC_u16GetVal
+ .text.ADC_u32GetVal
+                0x00000bb6      0x23c ./src/ADC.o
+                0x00000bb6                ADC_u32GetVal
  .text.DIO_voidInit
-                0x00000d84       0x7e ./src/DIO.o
-                0x00000d84                DIO_voidInit
+                0x00000df2       0x7e ./src/DIO.o
+                0x00000df2                DIO_voidInit
  .text.DIO_u8GetVal
-                0x00000e02      0x156 ./src/DIO.o
-                0x00000e02                DIO_u8GetVal
+                0x00000e70      0x156 ./src/DIO.o
+                0x00000e70                DIO_u8GetVal
  .text.DIO_voidWriteVal
-                0x00000f58      0x1dc ./src/DIO.o
-                0x00000f58                DIO_voidWriteVal
+                0x00000fc6      0x1dc ./src/DIO.o
+                0x00000fc6                DIO_voidWriteVal
  .text.DIO_voidSetDir
-                0x00001134      0x1dc ./src/DIO.o
-                0x00001134                DIO_voidSetDir
+                0x000011a2      0x1dc ./src/DIO.o
+                0x000011a2                DIO_voidSetDir
  .text.LCD_WriteCommand
-                0x00001310      0x274 ./src/LCD.o
-                0x00001310                LCD_WriteCommand
+                0x0000137e      0x274 ./src/LCD.o
+                0x0000137e                LCD_WriteCommand
  .text.LCD_Init
-                0x00001584      0x32a ./src/LCD.o
-                0x00001584                LCD_Init
+                0x000015f2      0x32a ./src/LCD.o
+                0x000015f2                LCD_Init
  .text.LCD_WriteData
-                0x000018ae      0x282 ./src/LCD.o
-                0x000018ae                LCD_WriteData
+                0x0000191c      0x282 ./src/LCD.o
+                0x0000191c                LCD_WriteData
  .text.LCD_CLear
-                0x00001b30      0x114 ./src/LCD.o
-                0x00001b30                LCD_CLear
+                0x00001b9e      0x114 ./src/LCD.o
+                0x00001b9e                LCD_CLear
  .text.LCD_GoTo
-                0x00001c44       0x36 ./src/LCD.o
-                0x00001c44                LCD_GoTo
+                0x00001cb2       0x36 ./src/LCD.o
+                0x00001cb2                LCD_GoTo
  .text.LCD_WrtireString
-                0x00001c7a       0x88 ./src/LCD.o
-                0x00001c7a                LCD_WrtireString
+                0x00001ce8       0x88 ./src/LCD.o
+                0x00001ce8                LCD_WrtireString
  .text.LCD_Set_CG_Add
-                0x00001d02      0x112 ./src/LCD.o
-                0x00001d02                LCD_Set_CG_Add
+                0x00001d70      0x112 ./src/LCD.o
+                0x00001d70                LCD_Set_CG_Add
  .text.LCD_Shift
-                0x00001e14      0x110 ./src/LCD.o
-                0x00001e14                LCD_Shift
+                0x00001e82      0x110 ./src/LCD.o
+                0x00001e82                LCD_Shift
  .text.LCD_Set_Entry_Mode
-                0x00001f24      0x120 ./src/LCD.o
-                0x00001f24                LCD_Set_Entry_Mode
+                0x00001f92      0x120 ./src/LCD.o
+                0x00001f92                LCD_Set_Entry_Mode
  .text.LCD_Set_DD_Add
-                0x00002044      0x112 ./src/LCD.o
-                0x00002044                LCD_Set_DD_Add
+                0x000020b2      0x112 ./src/LCD.o
+                0x000020b2                LCD_Set_DD_Add
  .text.LCD_Arabic_Dict
-                0x00002156      0x74e ./src/LCD.o
-                0x00002156                LCD_Arabic_Dict
+                0x000021c4      0x74e ./src/LCD.o
+                0x000021c4                LCD_Arabic_Dict
  .text.LCD_WriteArabicData
-                0x000028a4       0x56 ./src/LCD.o
-                0x000028a4                LCD_WriteArabicData
+                0x00002912       0x56 ./src/LCD.o
+                0x00002912                LCD_WriteArabicData
  .text.IS_WRITTEN
-                0x000028fa       0x6a ./src/LCD.o
-                0x000028fa                IS_WRITTEN
+                0x00002968       0x6a ./src/LCD.o
+                0x00002968                IS_WRITTEN
  .text.LCD_WrtireString_Arabic
-                0x00002964       0xd0 ./src/LCD.o
-                0x00002964                LCD_WrtireString_Arabic
- .text.SS_Init  0x00002a34       0x4a ./src/Seven_Segment.o
-                0x00002a34                SS_Init
+                0x000029d2       0xd0 ./src/LCD.o
+                0x000029d2                LCD_WrtireString_Arabic
+ .text.SS_Init  0x00002aa2       0x4a ./src/Seven_Segment.o
+                0x00002aa2                SS_Init
  .text.SS_Write
-                0x00002a7e       0xb2 ./src/Seven_Segment.o
-                0x00002a7e                SS_Write
- .text.main     0x00002b30      0x434 ./src/main.o
-                0x00002b30                main
- .text.libgcc   0x00002f64       0x3e c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
-                0x00002f64                __mulsi3
- .text.libgcc   0x00002fa2       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
-                0x00002fa2                __udivmodsi4
- .text.libgcc   0x00002fe6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00002fe6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00002fe6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x00002fe6       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x00002fe6                __prologue_saves__
- .text.libgcc   0x0000301e       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x0000301e                __epilogue_restores__
-                0x00003054                . = ALIGN (0x2)
+                0x00002aec       0xb2 ./src/Seven_Segment.o
+                0x00002aec                SS_Write
+ .text.main     0x00002b9e      0x444 ./src/main.o
+                0x00002b9e                main
+ .text.libgcc   0x00002fe2       0x3e c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                0x00002fe2                __mulsi3
+ .text.libgcc   0x00003020       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x00003020                __udivmodsi4
+ .text.libgcc   0x00003064        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00003064        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00003064        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00003064       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x00003064                __prologue_saves__
+ .text.libgcc   0x0000309c       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x0000309c                __epilogue_restores__
+                0x000030d2                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00003054        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00003054                exit
-                0x00003054                _exit
+ .fini9         0x000030d2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x000030d2                exit
+                0x000030d2                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -364,11 +364,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00003054        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x000030d2        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00003058                _etext = .
+                0x000030d6                _etext = .
 
-.data           0x00800060       0x10 load address 0x00003058
+.data           0x00800060       0x10 load address 0x000030d6
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm16.o
@@ -442,8 +442,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x00800072        0x1 ./src/LCD.o
  *(COMMON)
                 0x00800073                PROVIDE (__bss_end, .)
-                0x00003058                __data_load_start = LOADADDR (.data)
-                0x00003068                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000030d6                __data_load_start = LOADADDR (.data)
+                0x000030e6                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800073        0x0
                 0x00800073                PROVIDE (__noinit_start, .)
@@ -468,21 +468,21 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x2994
+.stab           0x00000000     0x2a0c
  *(.stab)
- .stab          0x00000000      0x2ac ./src/ADC.o
- .stab          0x000002ac      0x324 ./src/DIO.o
+ .stab          0x00000000      0x30c ./src/ADC.o
+ .stab          0x0000030c      0x324 ./src/DIO.o
                                 0x3b4 (size before relaxing)
- .stab          0x000005d0     0x1ce0 ./src/LCD.o
+ .stab          0x00000630     0x1ce0 ./src/LCD.o
                                0x1d64 (size before relaxing)
- .stab          0x000022b0      0x24c ./src/Seven_Segment.o
+ .stab          0x00002310      0x24c ./src/Seven_Segment.o
                                 0x474 (size before relaxing)
- .stab          0x000024fc      0x498 ./src/main.o
-                                0x6c0 (size before relaxing)
+ .stab          0x0000255c      0x4b0 ./src/main.o
+                                0x6d8 (size before relaxing)
 
-.stabstr        0x00000000      0xbb2
+.stabstr        0x00000000      0xbf1
  *(.stabstr)
- .stabstr       0x00000000      0xbb2 ./src/ADC.o
+ .stabstr       0x00000000      0xbf1 ./src/ADC.o
 
 .stab.excl
  *(.stab.excl)

@@ -6,7 +6,7 @@
  */
 #include "Interrupt.h"
 #include "Utils.h"
-
+#include "ADC.h"
 
 void ExtINT_voidInit(u8 u8Number)
 
@@ -23,8 +23,6 @@ void ExtINT_voidInit(u8 u8Number)
 		Set_Bit(GICR,Pin6);
 		Clr_Bit(GICR,Pin7);
 		Clr_Bit(GICR,Pin5);
-
-
 		break;
 
 	case INT1:
@@ -36,6 +34,20 @@ void ExtINT_voidInit(u8 u8Number)
 		Clr_Bit(MCUCR,Pin3);
 		break;
 
+	case INT2:
+		Set_Bit(GICR,Pin5);
+		Clr_Bit(GICR,Pin6);
+		Clr_Bit(GICR,Pin7);
+
+		Set_Bit(MCUCSR,Pin6); /*Raising edge*/
+		break;
+
+	case ADC:
+		Set_Bit(ADCSRA,Pin3);
+		/*Set_Bit(ADCSRA,Pin5);*/
+		Clr_Bit(GICR,Pin7);
+		Clr_Bit(GICR,Pin6);
+		Clr_Bit(GICR,Pin5);
 	}
 
 }

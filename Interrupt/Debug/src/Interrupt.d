@@ -1,5 +1,6 @@
 src/Interrupt.d src/Interrupt.o: ../src/Interrupt.c ../src/Interrupt.h \
-  ../src/DIO.h ../src/DIO_Private.h ../src/STD_Types.h ../src/Utils.h
+  ../src/DIO.h ../src/DIO_Private.h ../src/STD_Types.h ../src/Utils.h \
+  ../src/ADC.h
 
 ../src/Interrupt.h:
 
@@ -10,3 +11,5 @@ src/Interrupt.d src/Interrupt.o: ../src/Interrupt.c ../src/Interrupt.h \
 ../src/STD_Types.h:
 
 ../src/Utils.h:
+
+../src/ADC.h:
