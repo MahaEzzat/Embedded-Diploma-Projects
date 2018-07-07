@@ -13,5 +13,6 @@
 
 void LED_Init(u8 u8LedNumber);
 void LED(u8 u8LedNumber, u8 u8State);
+void ToggleLED(u8 u8LedNumber);
 
 #endif /* LED_H_ */

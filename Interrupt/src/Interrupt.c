@@ -7,6 +7,7 @@
 #include "Interrupt.h"
 #include "Utils.h"
 #include "ADC.h"
+#include <avr/delay.h>
 
 void ExtINT_voidInit(u8 u8Number)
 
@@ -21,14 +22,10 @@ void ExtINT_voidInit(u8 u8Number)
 
 		/*Enable INT0*/
 		Set_Bit(GICR,Pin6);
-		Clr_Bit(GICR,Pin7);
-		Clr_Bit(GICR,Pin5);
 		break;
 
 	case INT1:
 		Set_Bit(GICR,Pin7);
-		Clr_Bit(GICR,Pin6);
-		Clr_Bit(GICR,Pin5);
 
 		Set_Bit(MCUCR,Pin2);
 		Clr_Bit(MCUCR,Pin3);
@@ -36,18 +33,18 @@ void ExtINT_voidInit(u8 u8Number)
 
 	case INT2:
 		Set_Bit(GICR,Pin5);
-		Clr_Bit(GICR,Pin6);
-		Clr_Bit(GICR,Pin7);
+
 
 		Set_Bit(MCUCSR,Pin6); /*Raising edge*/
 		break;
 
 	case ADC:
 		Set_Bit(ADCSRA,Pin3);
-		/*Set_Bit(ADCSRA,Pin5);*/
+
 		Clr_Bit(GICR,Pin7);
 		Clr_Bit(GICR,Pin6);
 		Clr_Bit(GICR,Pin5);
+		break;
 	}
 
 }

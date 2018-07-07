@@ -7,6 +7,8 @@
 
 #include "LED.h"
 #include "DIO.h"
+#include "Utils.h"
+#include "avr/delay.h"
 
 void LED_Init(u8 u8LedNumber)
 {
@@ -28,4 +30,22 @@ void LED(u8 u8LedNumber, u8 u8State)
 
 	else
 		DIO_voidWriteVal(PortA,Pin4,u8State); /* Set pin 4A to StateV */
+}
+void ToggleLED(u8 u8LedNumber)
+{
+	if(u8LedNumber)
+	{
+		LED(1,ON);
+		_delay_ms(1000);
+		LED(1,OFF);
+		_delay_ms(1000);
+	}
+	else
+	{
+		LED(0,ON);
+		_delay_ms(1000);
+		LED(0,OFF);
+		_delay_ms(1000);
+	}
+
 }

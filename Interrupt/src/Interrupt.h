@@ -21,7 +21,7 @@
 #define MCUCR *((volatile u8*)(0x55))
 #define MCUCSR *((volatile u8*)(0x54))
 #define Global_Interrupt_Enable() Set_Bit(SREG,Pin7)
-
+#define Global_Interrupt_Disable() Clr_Bit(SREG,Pin7)
 
 void ExtINT_voidInit(u8 u8Number);
 

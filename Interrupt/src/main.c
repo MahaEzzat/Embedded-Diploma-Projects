@@ -10,41 +10,43 @@
 #include "LED.h"
 #include "ADC.h"
 #include "LCD.h"
+#include "Timer.h"
 #include "Seven_Segment.h"
+#include "Buzzer.h"
 
-#define INT ADC
+
+#define INT INT0
 #define Channel 0
 
-void __vector_1(void) __attribute__((signal,naked));
-void __vector_2(void) __attribute__((signal,naked));
-void __vector_14(void) __attribute__((signal,naked));
-void __vector_18(void) __attribute__((signal,naked));
+u32 counter=0;
+
+void __vector_1(void) __attribute__((signal,__INTR_ATTRS));  /*INT0*/
+void __vector_2(void) __attribute__((signal,__INTR_ATTRS));  /*INT1*/
+void __vector_9(void) __attribute__((signal,__INTR_ATTRS));  /*Timer0 OVF*/
+void __vector_14(void) __attribute__((signal,__INTR_ATTRS)); /*ADC*/
+void __vector_18(void) __attribute__((signal,__INTR_ATTRS)); /*INT2*/
+void __vector_19(void) __attribute__((signal,__INTR_ATTRS)); /*Timer0 Comp*/
 
 void __vector_1(void)
 {
-	LED_Init(0);
-	LED(0,ON);
-	_delay_ms(1000);
-	LED(0,OFF);
+	ToggleLED(0);
 }
 
 void __vector_2(void)
 {
-	LED_Init(0);
-	LED(0,ON);
-	_delay_ms(1000);
-	LED(0,OFF);
+	ToggleLED(1);
+}
+
+void __vector_9(void)
+{
+	counter++;
+	if(counter==488)
+	{	counter=0;
+		ToggleLED(0);
+	}
 }
 
 void __vector_14(void)
-{
-	LED_Init(0);
-	LED(0,ON);
-	_delay_ms(1000);
-	LED(0,OFF);
-}
-
-void __vector_18(void)
 {
 	u32 Data_Reading,Data_Voltage;
 	u8 count,count2, Reading[4], Voltage[4];
@@ -77,30 +79,74 @@ void __vector_18(void)
 	LCD_CLear();
 }
 
+void __vector_18(void)
+{
+	Buzzer_Toggle();
+}
+
+void __vector_19(void)
+{
+	counter++;
+	if(counter==625)
+	{	counter=0;
+		ToggleLED(0);
+	}
+}
+
 int main()
 {
-	ADC_voidInit();
-	LCD_Init();
-	SS_Init();
+#if INT==NORMAL
+	LED_Init(0);
+	TIMERINT_voidInit(NORMAL);
 	Global_Interrupt_Enable();
-	ExtINT_voidInit(INT);
+	while(1){}
+
+#endif
+
+#if INT==FAST_PW
+	LED_Init(0);
+	TIMERINT_voidInit(FAST_PW);
+	while(1)
+	{
+		OCR0+=20;
+	}
+
+#endif
+
+#if INT==CTC
+	LED_Init(0);
+	TIMERINT_voidInit(CTC);
+	while(1){}
+
+#endif
 
 #if INT==INT0 || INT==INT1 || INT==INT2
 
-	DIO_voidSetDir(PortA,Pin7,Output);
-	DIO_voidWriteVal(PortA,Pin7,Zero_Volt);
+	Buzzer_Init();
+	LED_Init(0);
+	LED_Init(1);
+	ExtINT_voidInit(INT);
+	Global_Interrupt_Enable();
+	DIO_voidSetDir(PortD,Pin6,Output);
+	DIO_voidWriteVal(PortD,Pin6,Zero_Volt);
 
 	while(1)
 	{
-		DIO_voidWriteVal(PortA,Pin7,Five_Volt);
-		_delay_ms(1000);
-		DIO_voidWriteVal(PortA,Pin7,Zero_Volt);
-		_delay_ms(1000);
+		_delay_ms(100);
+		DIO_voidWriteVal(PortD,Pin6,Five_Volt);
+		_delay_ms(100);
+		DIO_voidWriteVal(PortD,Pin6,Zero_Volt);
 	}
 
 #endif
 
 #if INT==ADC
+
+	ADC_voidInit();
+	LCD_Init();
+	SS_Init();
+	ExtINT_voidInit(INT);
+	Global_Interrupt_Enable();
 
 	while(1)
 	{
